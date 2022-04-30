@@ -1,24 +1,17 @@
-{
-  "notes": [
-    {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "test",
-      "text": "testnt"
-    },
-    {
-      "title": "test",
-      "text": "testnt"
-    },
-    {
-      "title": "test",
-      "text": "testnt"
-    },
-    {
-      "title": "ret",
-      "text": "aedw"
-    }
-  ]
-}
+[
+  {
+    "title": "Test Title",
+    "text": "Test text",
+    "id": "JIX5NSBJh5l0fLGRqXTTg"
+  },
+  {
+    "title": "re",
+    "text": "asdf",
+    "id": "CTg-Vo7JDRsdw_m4zawBZ"
+  },
+  {
+    "title": "new test",
+    "text": "testest",
+    "id": "JZ1OGl78CMZ7eG0rDVoyG"
+  }
+]

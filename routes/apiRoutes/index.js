@@ -1,6 +1,7 @@
 // npm modules & other variables
 const router = require('express').Router();
 const fs = require('fs');
+const { nanoid } = require('nanoid');
 const path = require('path');
 const notes = require('../../db/db.json');
 
@@ -11,9 +12,10 @@ router.get('/notes', (req, res) => {
 
 // add new note
 router.post('/notes', (req, res) => {
-    const note = req.body;
+    let note = req.body;
 
-    // set unique id for note
+    // set unique id for note using nanoid
+    note.id = nanoid();
 
     // check that there is actually a note (title & text)
     if (!note.title || !note.text) {
@@ -22,7 +24,7 @@ router.post('/notes', (req, res) => {
         notes.push(note);
         fs.writeFileSync(
             path.join(__dirname, '../../db/db.json'),
-            JSON.stringify({ notes }, null, 2)
+            JSON.stringify(notes, null, 2)
         );
         res.json(note);
     }
