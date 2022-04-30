@@ -28,6 +28,21 @@ router.post('/notes', (req, res) => {
         );
         res.json(note);
     }
+});
+
+// delete a note
+router.delete('/notes/:id', (req, res) => {
+    let id = req.params.id;
+    for (let i = 0; i < notes.length; i++) {
+        if (notes[i].id === id) {
+            notes.splice(i, 1);
+            fs.writeFileSync(
+                path.join(__dirname, '../../db/db.json'),
+                JSON.stringify(notes, null, 2)
+            );
+        }
+    }
+    res.status(404).json({ message: 'No note found.' });
 })
 
 module.exports = router;
